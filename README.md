@@ -1,36 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js Modal Demo
 
-## Getting Started
+This repo shows how to make a modal in Next.js using parallel and intercepting routes. It implements a pattern described [here](https://nextjs.org/docs/app/building-your-application/routing/parallel-routes#modals) in the Next.js docs.
 
-First, run the development server:
+The app consists of a homepage and a login page. If you navigate directly (e.g. via shared link) to `/login` you will see the full login page. If you navigate to the login page using the nav bar on the home page, you will see the login form displayed in a modal component.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This app does _not_ keep track of modal state because it relies on route interception rather than typical client-side interactivity. To implement a modal in a more "traditional" way, you could use parallel routes alone, or even just a simple React component.
